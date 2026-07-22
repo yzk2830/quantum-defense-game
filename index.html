@@ -2593,17 +2593,6 @@
                 <button id="shareBtnMain" class="cyber-button text-sm" style="border-color: rgba(255,0,255,0.5); color: #ff00ff;" data-i18n="shareResults">分享战绩</button>
             </div>
             <button id="sandboxBtn" class="cyber-button text-sm" style="border-color: rgba(255,165,0,0.6); color: #ffa500;" data-i18n="sandbox">训练沙盒</button>
-            <div style="display:flex;flex-wrap:wrap;gap:6px;margin-top:6px;">
-                <button id="challengeBtn" class="cyber-button text-sm" style="border-color:rgba(255,50,50,0.5);color:#ff3232;font-size:12px;" data-i18n="challengeMode">挑战模式</button>
-                <button id="customDiffBtn" class="cyber-button text-sm" style="border-color:rgba(100,255,100,0.5);color:#64ff64;font-size:12px;" data-i18n="customDifficulty">自定义难度</button>
-                <button id="statsBtn" class="cyber-button text-sm" style="border-color:rgba(100,200,255,0.5);color:#64c8ff;font-size:12px;" data-i18n="statsDashboard">统计</button>
-                <button id="presetBtn" class="cyber-button text-sm" style="border-color:rgba(200,150,255,0.5);color:#c896ff;font-size:12px;" data-i18n="presetBtn">配装预设</button>
-                <button id="prestigeBtn" class="cyber-button text-sm" style="border-color:rgba(255,215,0,0.5);color:#ffd700;font-size:12px;" data-i18n="prestigeBtn">转生</button>
-                <button id="seasonBtn" class="cyber-button text-sm" style="border-color:rgba(0,200,100,0.5);color:#00c864;font-size:12px;" data-i18n="seasonBtn">赛季</button>
-                <button id="skinBtn" class="cyber-button text-sm" style="border-color:rgba(255,150,200,0.5);color:#ff96c8;font-size:12px;" data-i18n="skinBtn">皮肤</button>
-                <button id="waveEditorBtn" class="cyber-button text-sm" style="border-color:rgba(150,100,255,0.5);color:#9664ff;font-size:12px;" data-i18n="waveEditorBtn">波次编辑</button>
-                <button id="petEvolveBtn" class="cyber-button text-sm" style="border-color:rgba(255,200,0,0.5);color:#ffc800;font-size:12px;" data-i18n="petEvolveBtn">宠物进化</button>
-            </div>
             <p class="text-xs text-gray-500" data-i18n="newbieTip">提示：新手建议先玩简单模式</p>
         </div>
     </div>
@@ -2619,7 +2608,7 @@
             </div>
             <div id="baseBuildingGrid" style="display: grid; grid-template-columns: 1fr 1fr; gap: 14px;"></div>
             <h3 class="text-lg font-bold mb-3 mt-4" style="color: #00ccff; border-top: 1px solid rgba(0,255,255,0.2); padding-top: 12px;" data-i18n="baseFunctionCenter">功能中心</h3>
-            <div id="baseFunctionGrid" style="display: grid; grid-template-columns: 1fr 1fr; gap: 14px;"></div>
+            <div id="baseFunctionGrid" style="display: grid; grid-template-columns: 1fr 1fr 1fr; gap: 10px;"></div>
             <button id="backToMainFromBase" class="cyber-button w-full mt-4" data-i18n="backToMenu">返回主菜单</button>
         </div>
     </div>
@@ -2701,6 +2690,17 @@
             <h2 class="text-2xl font-bold mb-2 glow-text panel-title" data-i18n="selectGameMode">选择游戏模式</h2>
             <p class="text-sm text-gray-400 mb-6" data-i18n="modeSelectHint">选择一个模式开始游戏</p>
             <div class="mode-select-grid" id="modeSelectGrid">
+            </div>
+            <!-- 挑战模式入口 -->
+            <div style="margin-top: 16px; padding: 12px; background: rgba(255,50,50,0.08); border: 1px solid rgba(255,50,50,0.3); border-radius: 10px;">
+                <div style="display: flex; align-items: center; gap: 10px; margin-bottom: 8px;">
+                    <span style="font-size: 28px;">🏅</span>
+                    <div>
+                        <div style="font-size: 16px; font-weight: bold; color: #ff3232;" data-i18n="challengeMode">挑战模式</div>
+                        <div style="font-size: 12px; color: #aaa;" data-i18n="challengeModeHint">选择挑战条件，在约束下通关获得额外奖励</div>
+                    </div>
+                </div>
+                <button id="modeSelectChallengeBtn" class="cyber-button w-full" style="border-color: rgba(255,50,50,0.5); color: #ff3232; font-size: 13px;" data-i18n="challengeMode">进入挑战模式</button>
             </div>
             <div class="flex gap-3 mt-6">
                 <button id="modeSelectBackBtn" class="cyber-button flex-1" style="border-color:rgba(128,128,128,0.5); color:#888;" data-i18n="back">返回</button>
@@ -3532,7 +3532,7 @@
         <p style="color:#aaa;font-size:13px;margin-bottom:12px;" data-i18n="challengeDesc">选择挑战条件，在约束下通关获得额外奖励</p>
         <div id="challengeGrid" style="display:grid;grid-template-columns:1fr 1fr;gap:10px;"></div>
         <button id="challengeStartBtn" class="cyber-button w-full mt-4" data-i18n="challengeStart">开始挑战</button>
-        <button id="challengeCloseBtn" class="cyber-button w-full mt-2" style="border-color:rgba(255,255,255,0.3);" data-i18n="backToMenu">返回主菜单</button>
+        <button id="challengeCloseBtn" class="cyber-button w-full mt-2" style="border-color:rgba(255,255,255,0.3);" data-i18n="back">返回</button>
       </div>
     </div>
 
@@ -3571,7 +3571,7 @@
       <div class="modal-content cyber-border glass-effect scrollable-panel" style="max-width:600px;max-height:90vh;">
         <h2 class="text-2xl font-bold mb-4 glow-text" data-i18n="statsDashboardTitle">统计仪表盘</h2>
         <div id="statsDashboardContent"></div>
-        <button id="statsDashboardCloseBtn" class="cyber-button w-full mt-4" style="border-color:rgba(255,255,255,0.3);" data-i18n="backToMenu">返回主菜单</button>
+        <button id="statsDashboardCloseBtn" class="cyber-button w-full mt-4" style="border-color:rgba(255,255,255,0.3);" data-i18n="backToBase">返回基地</button>
       </div>
     </div>
 
@@ -3581,7 +3581,7 @@
         <h2 class="text-2xl font-bold mb-4 glow-text" data-i18n="presetTitle">装备预设</h2>
         <p style="color:#aaa;font-size:13px;margin-bottom:10px;" data-i18n="presetDesc">保存3套配装方案，一键切换</p>
         <div id="presetSlots" style="display:grid;gap:10px;"></div>
-        <button id="presetCloseBtn" class="cyber-button w-full mt-4" style="border-color:rgba(255,255,255,0.3);" data-i18n="backToMenu">返回主菜单</button>
+        <button id="presetCloseBtn" class="cyber-button w-full mt-4" style="border-color:rgba(255,255,255,0.3);" data-i18n="backToBase">返回基地</button>
       </div>
     </div>
 
@@ -3590,7 +3590,7 @@
       <div class="modal-content cyber-border glass-effect scrollable-panel" style="max-width:500px;max-height:90vh;">
         <h2 class="text-2xl font-bold mb-4 glow-text"><span class="prestige-star">★</span> <span data-i18n="prestigeTitle">量子转生</span></h2>
         <div id="prestigeContent"></div>
-        <button id="prestigeCloseBtn" class="cyber-button w-full mt-4" style="border-color:rgba(255,255,255,0.3);" data-i18n="backToMenu">返回主菜单</button>
+        <button id="prestigeCloseBtn" class="cyber-button w-full mt-4" style="border-color:rgba(255,255,255,0.3);" data-i18n="backToBase">返回基地</button>
       </div>
     </div>
 
@@ -3599,7 +3599,7 @@
       <div class="modal-content cyber-border glass-effect scrollable-panel" style="max-width:500px;max-height:90vh;">
         <h2 class="text-2xl font-bold mb-4 glow-text" data-i18n="newSeasonTitle">赛季系统</h2>
         <div id="seasonContent"></div>
-        <button id="seasonCloseBtn" class="cyber-button w-full mt-4" style="border-color:rgba(255,255,255,0.3);" data-i18n="backToMenu">返回主菜单</button>
+        <button id="seasonCloseBtn" class="cyber-button w-full mt-4" style="border-color:rgba(255,255,255,0.3);" data-i18n="backToBase">返回基地</button>
       </div>
     </div>
 
@@ -3615,7 +3615,7 @@
         <div id="skinKnifeTab" class="tab-content active"><div class="skin-grid" id="skinKnifeGrid"></div></div>
         <div id="skinAuraTab" class="tab-content"><div class="skin-grid" id="skinAuraGrid"></div></div>
         <div id="skinKillTab" class="tab-content"><div class="skin-grid" id="skinKillGrid"></div></div>
-        <button id="skinCloseBtn" class="cyber-button w-full mt-4" style="border-color:rgba(255,255,255,0.3);" data-i18n="backToMenu">返回主菜单</button>
+        <button id="skinCloseBtn" class="cyber-button w-full mt-4" style="border-color:rgba(255,255,255,0.3);" data-i18n="backToBase">返回基地</button>
       </div>
     </div>
 
@@ -3631,7 +3631,7 @@
           <button id="waveEditorExportBtn" class="cyber-button" style="flex:1;font-size:13px;" data-i18n="waveEditorExport">导出代码</button>
         </div>
         <button id="waveEditorStartBtn" class="cyber-button w-full mt-2" data-i18n="waveEditorStart">开始自定义波次</button>
-        <button id="waveEditorCloseBtn" class="cyber-button w-full mt-2" style="border-color:rgba(255,255,255,0.3);" data-i18n="backToMenu">返回主菜单</button>
+        <button id="waveEditorCloseBtn" class="cyber-button w-full mt-2" style="border-color:rgba(255,255,255,0.3);" data-i18n="backToBase">返回基地</button>
       </div>
     </div>
 
@@ -3649,7 +3649,7 @@
       <div class="modal-content cyber-border glass-effect" style="max-width:460px;">
         <h2 class="text-2xl font-bold mb-4 glow-text" data-i18n="petEvolveTitle">宠物进化</h2>
         <div id="petEvolveContent"></div>
-        <button id="petEvolveCloseBtn" class="cyber-button w-full mt-4" style="border-color:rgba(255,255,255,0.3);" data-i18n="backToMenu">返回主菜单</button>
+        <button id="petEvolveCloseBtn" class="cyber-button w-full mt-4" style="border-color:rgba(255,255,255,0.3);" data-i18n="backToBase">返回基地</button>
       </div>
     </div>
 
@@ -4379,7 +4379,7 @@
                 weatherVoidRift: '虚空裂隙', weatherVoidRiftDesc: '全图敌人持续受到伤害，金币掉落增加',
                 weatherSolarFlare: '太阳耀斑', weatherSolarFlareDesc: '治疗效果翻倍，但受到伤害+25%',
                 weatherClear: '天气晴朗', weatherEventStart: '环境事件触发', weatherEventEnd: '环境事件结束',
-weatherEventTipTurn:'风向转变！',weatherEventTipStorm:'暴风雨来袭！',statMaxCombo:'最大连击',waveAnnounce:'第{n}波',comboKillingSpree:'大杀特杀',comboRampage:'暴走',comboGodlike:'神级连杀',dailyLogin:'每日签到',dailyLoginClaim:'领取',dailyLoginClaimed:'已领取',dailyLoginStreak:'连续{n}天',dailyLoginDay1:'第1天',dailyLoginDay2:'第2天',dailyLoginDay3:'第3天',dailyLoginDay4:'第4天',dailyLoginDay5:'第5天',dailyLoginDay6:'第6天',dailyLoginDay7:'第7天',replayBtn:'死亡回放',replayPlaying:'回放中...',replaySkip:'跳过',sandbox:'训练沙盒',sandboxStart:'开始训练',sandboxExit:'退出训练',sandboxEnemyType:'敌人类型',sandboxSpawnCount:'生成数量',sandboxSpawnInterval:'生成间隔',sandboxEnemyHealth:'敌人血量倍率',sandboxEnemySpeed:'敌人速度倍率',sandboxEnemyDamage:'敌人伤害倍率',sandboxPlayerHealth:'玩家生命值',sandboxKnifeCount:'飞刀数量',sandboxKnifeDamage:'飞刀伤害',sandboxKnifeSpeed:'飞刀转速',sandboxInfiniteSpawn:'无限生成（击杀后持续刷新）',sandboxEnemyTypeMulti:'敌人类型（可多选）',sandboxSelectAll:'全选',sandboxClear:'清空',challengeMode:'挑战模式',challengeTitle:'挑战模式',challengeDesc:'选择挑战条件，在约束下通关获得额外奖励',challengeStart:'开始挑战',challengeNoKnife:'无刀挑战',challengeNoKnifeDesc:'不能使用飞刀，只能靠技能和走位',challengeOneHp:'一血通关',challengeOneHpDesc:'生命值锁定为1，不能回血',challengeMutation:'变异风暴',challengeMutationDesc:'所有敌人都带变异',challengeElement:'元素试炼',challengeElementDesc:'只能用特定元素克制链通关',challengeTimeLimit:'限时沙盒',challengeTimeLimitDesc:'沙盒模式+60秒倒计时',customDifficulty:'自定义难度',customDiffTitle:'自定义难度',customDiffHealth:'敌人血量倍率',customDiffSpeed:'敌人速度倍率',customDiffDamage:'敌人伤害倍率',customDiffSpawn:'生成速率（秒/只）',customDiffWarning:'自定义难度不记入排行榜',customDiffApply:'应用并开始',cancel:'取消',statsDashboard:'统计',statsDashboardTitle:'统计仪表盘',presetBtn:'配装预设',presetTitle:'装备预设',presetDesc:'保存3套配装方案，一键切换',presetSlot1:'方案一',presetSlot2:'方案二',presetSlot3:'方案三',presetSave:'保存当前配置',presetLoad:'装备此方案',presetEmpty:'空',prestigeBtn:'转生',prestigeTitle:'量子转生',prestigeLevel:'转生等级',prestigeBonus:'永久加成',prestigeReq:'转生需达到第{n}波',prestigeConfirm:'确认转生？将重置波次和资源，但保留永久加成',prestigeDoBtn:'执行转生',prestigeNoBtn:'转生条件不足',seasonBtn:'赛季',newSeasonTitle:'赛季系统',seasonLevel:'赛季等级',seasonExp:'赛季经验',seasonTask:'赛季任务',seasonReward:'赛季奖励',newSeasonDaysLeft:'剩余天数',skinBtn:'皮肤',skinTitle:'皮肤系统',skinKnife:'飞刀皮肤',skinAura:'光环皮肤',skinKill:'击杀特效',skinLocked:'解锁条件：{n}',skinEquip:'装备',skinUnequip:'卸下',waveEditorBtn:'波次编辑',waveEditorTitle:'波次编辑器',waveEditorDesc:'设计自定义波次序列，分享给好友',waveEditorAdd:'+ 添加波次',waveEditorImport:'导入代码',waveEditorExport:'导出代码',waveEditorStart:'开始自定义波次',waveEditorWave:'第{n}波',waveEditorEnemy:'敌人',waveEditorCount:'数量',waveEditorDel:'删除',battleReportTitle:'战斗报告',battleReportTime:'战斗时长',battleReportDmg:'总伤害',battleReportDPS:'平均DPS',battleReportKills:'击杀数',battleReportCombo:'最大连击',battleReportWave:'到达波次',battleReportDamageTaken:'受到伤害',battleReportDmgDist:'伤害来源分布',petEvolveBtn:'宠物进化',petEvolveTitle:'宠物进化',petEvolveLevel:'等级',petEvolveExp:'经验',petEvolveBtnDo:'进化',petEvolveLocked:'未达进化条件',petEvolveMax:'已达最高形态',ghostReplay:'幽灵竞速中',backToMenu:'返回主菜单',confirm:'确定',
+weatherEventTipTurn:'风向转变！',weatherEventTipStorm:'暴风雨来袭！',statMaxCombo:'最大连击',waveAnnounce:'第{n}波',comboKillingSpree:'大杀特杀',comboRampage:'暴走',comboGodlike:'神级连杀',dailyLogin:'每日签到',dailyLoginClaim:'领取',dailyLoginClaimed:'已领取',dailyLoginStreak:'连续{n}天',dailyLoginDay1:'第1天',dailyLoginDay2:'第2天',dailyLoginDay3:'第3天',dailyLoginDay4:'第4天',dailyLoginDay5:'第5天',dailyLoginDay6:'第6天',dailyLoginDay7:'第7天',replayBtn:'死亡回放',replayPlaying:'回放中...',replaySkip:'跳过',sandbox:'训练沙盒',sandboxStart:'开始训练',sandboxExit:'退出训练',sandboxEnemyType:'敌人类型',sandboxSpawnCount:'生成数量',sandboxSpawnInterval:'生成间隔',sandboxEnemyHealth:'敌人血量倍率',sandboxEnemySpeed:'敌人速度倍率',sandboxEnemyDamage:'敌人伤害倍率',sandboxPlayerHealth:'玩家生命值',sandboxKnifeCount:'飞刀数量',sandboxKnifeDamage:'飞刀伤害',sandboxKnifeSpeed:'飞刀转速',sandboxInfiniteSpawn:'无限生成（击杀后持续刷新）',sandboxEnemyTypeMulti:'敌人类型（可多选）',sandboxSelectAll:'全选',sandboxClear:'清空',challengeMode:'挑战模式',challengeModeHint:'选择挑战条件，在约束下通关获得额外奖励',challengeTitle:'挑战模式',challengeDesc:'选择挑战条件，在约束下通关获得额外奖励',challengeStart:'开始挑战',challengeNoKnife:'无刀挑战',challengeNoKnifeDesc:'不能使用飞刀，只能靠技能和走位',challengeOneHp:'一血通关',challengeOneHpDesc:'生命值锁定为1，不能回血',challengeMutation:'变异风暴',challengeMutationDesc:'所有敌人都带变异',challengeElement:'元素试炼',challengeElementDesc:'只能用特定元素克制链通关',challengeTimeLimit:'限时沙盒',challengeTimeLimitDesc:'沙盒模式+60秒倒计时',customDifficulty:'自定义难度',customDiffTitle:'自定义难度',customDiffHealth:'敌人血量倍率',customDiffSpeed:'敌人速度倍率',customDiffDamage:'敌人伤害倍率',customDiffSpawn:'生成速率（秒/只）',customDiffWarning:'自定义难度不记入排行榜',customDiffApply:'应用并开始',cancel:'取消',statsDashboard:'统计',statsDashboardTitle:'统计仪表盘',presetBtn:'配装预设',presetTitle:'装备预设',presetDesc:'保存3套配装方案，一键切换',presetSlot1:'方案一',presetSlot2:'方案二',presetSlot3:'方案三',presetSave:'保存当前配置',presetLoad:'装备此方案',presetEmpty:'空',prestigeBtn:'转生',prestigeTitle:'量子转生',prestigeLevel:'转生等级',prestigeBonus:'永久加成',prestigeReq:'转生需达到第{n}波',prestigeConfirm:'确认转生？将重置波次和资源，但保留永久加成',prestigeDoBtn:'执行转生',prestigeNoBtn:'转生条件不足',seasonBtn:'赛季',newSeasonTitle:'赛季系统',seasonLevel:'赛季等级',seasonExp:'赛季经验',seasonTask:'赛季任务',seasonReward:'赛季奖励',newSeasonDaysLeft:'剩余天数',skinBtn:'皮肤',skinTitle:'皮肤系统',skinKnife:'飞刀皮肤',skinAura:'光环皮肤',skinKill:'击杀特效',skinLocked:'解锁条件：{n}',skinEquip:'装备',skinUnequip:'卸下',waveEditorBtn:'波次编辑',waveEditorTitle:'波次编辑器',waveEditorDesc:'设计自定义波次序列，分享给好友',waveEditorAdd:'+ 添加波次',waveEditorImport:'导入代码',waveEditorExport:'导出代码',waveEditorStart:'开始自定义波次',waveEditorWave:'第{n}波',waveEditorEnemy:'敌人',waveEditorCount:'数量',waveEditorDel:'删除',battleReportTitle:'战斗报告',battleReportTime:'战斗时长',battleReportDmg:'总伤害',battleReportDPS:'平均DPS',battleReportKills:'击杀数',battleReportCombo:'最大连击',battleReportWave:'到达波次',battleReportDamageTaken:'受到伤害',battleReportDmgDist:'伤害来源分布',petEvolveBtn:'宠物进化',petEvolveTitle:'宠物进化',petEvolveLevel:'等级',petEvolveExp:'经验',petEvolveBtnDo:'进化',petEvolveLocked:'未达进化条件',petEvolveMax:'已达最高形态',ghostReplay:'幽灵竞速中',backToMenu:'返回主菜单',backToBase:'返回基地',confirm:'确定',
             },
             en: {
                 gameTitle: 'Quantum Defense 8.0', startGame: 'Start Game', shop: 'Shop', task: 'Tasks', settings: 'Settings',
@@ -4986,7 +4986,7 @@ weatherEventTipTurn:'风向转变！',weatherEventTipStorm:'暴风雨来袭！',
                 weatherVoidRift: 'Void Rift', weatherVoidRiftDesc: 'All enemies take DoT, extra coins drop',
                 weatherSolarFlare: 'Solar Flare', weatherSolarFlareDesc: 'Healing x2, but damage taken +25%',
                 weatherClear: 'Clear Weather', weatherEventStart: 'Environment Event', weatherEventEnd: 'Event Ended',
-weatherEventTipTurn:'Wind shift!',weatherEventTipStorm:'Storm incoming!',statMaxCombo:'Max Combo',waveAnnounce:'Wave {n}',comboKillingSpree:'Killing Spree',comboRampage:'Rampage',comboGodlike:'Godlike',dailyLogin:'Daily Login',dailyLoginClaim:'Claim',dailyLoginClaimed:'Claimed',dailyLoginStreak:'{n}-Day Streak',dailyLoginDay1:'Day 1',dailyLoginDay2:'Day 2',dailyLoginDay3:'Day 3',dailyLoginDay4:'Day 4',dailyLoginDay5:'Day 5',dailyLoginDay6:'Day 6',dailyLoginDay7:'Day 7',replayBtn:'Death Replay',replayPlaying:'Replaying...',replaySkip:'Skip',sandbox:'Training Sandbox',sandboxStart:'Start Training',sandboxExit:'Exit Sandbox',sandboxEnemyType:'Enemy Type',sandboxSpawnCount:'Spawn Count',sandboxSpawnInterval:'Spawn Interval',sandboxEnemyHealth:'Enemy Health Multiplier',sandboxEnemySpeed:'Enemy Speed Multiplier',sandboxEnemyDamage:'Enemy Damage Multiplier',sandboxPlayerHealth:'Player Health',sandboxKnifeCount:'Knife Count',sandboxKnifeDamage:'Knife Damage',sandboxKnifeSpeed:'Knife Rotation Speed',sandboxInfiniteSpawn:'Infinite Spawn (continuous refresh)',sandboxEnemyTypeMulti:'Enemy Types (multi-select)',sandboxSelectAll:'Select All',sandboxClear:'Clear',challengeMode:'Challenge',challengeTitle:'Challenge Modes',challengeDesc:'Choose constraints and earn extra rewards',challengeStart:'Start Challenge',challengeNoKnife:'No-Knife Challenge',challengeNoKnifeDesc:'No knives, skills and dodging only',challengeOneHp:'One-Hit Wonder',challengeOneHpDesc:'HP locked at 1, no healing',challengeMutation:'Mutation Storm',challengeMutationDesc:'All enemies have mutations',challengeElement:'Element Trial',challengeElementDesc:'Only specific element counters work',challengeTimeLimit:'Time Sandbox',challengeTimeLimitDesc:'Sandbox mode + 60s countdown',customDifficulty:'Custom Difficulty',customDiffTitle:'Custom Difficulty',customDiffHealth:'Enemy Health Multi',customDiffSpeed:'Enemy Speed Multi',customDiffDamage:'Enemy Damage Multi',customDiffSpawn:'Spawn Rate (s/enemy)',customDiffWarning:'Custom difficulty not ranked',customDiffApply:'Apply & Start',cancel:'Cancel',statsDashboard:'Stats',statsDashboardTitle:'Statistics Dashboard',presetBtn:'Presets',presetTitle:'Equipment Presets',presetDesc:'Save 3 loadouts, switch instantly',presetSlot1:'Slot 1',presetSlot2:'Slot 2',presetSlot3:'Slot 3',presetSave:'Save Current',presetLoad:'Equip',presetEmpty:'Empty',prestigeBtn:'Prestige',prestigeTitle:'Quantum Prestige',prestigeLevel:'Prestige Level',prestigeBonus:'Permanent Bonus',prestigeReq:'Reach Wave {n} to prestige',prestigeConfirm:'Prestige now? Resets waves and resources, keeps bonuses',prestigeDoBtn:'Prestige',prestigeNoBtn:'Requirements not met',seasonBtn:'Season',newSeasonTitle:'Season System',seasonLevel:'Season Level',seasonExp:'Season XP',seasonTask:'Season Tasks',seasonReward:'Season Rewards',newSeasonDaysLeft:'Days Left',skinBtn:'Skins',skinTitle:'Skin System',skinKnife:'Knife Skins',skinAura:'Aura Skins',skinKill:'Kill Effects',skinLocked:'Unlock: {n}',skinEquip:'Equip',skinUnequip:'Unequip',waveEditorBtn:'Wave Editor',waveEditorTitle:'Wave Editor',waveEditorDesc:'Design custom wave sequences, share with friends',waveEditorAdd:'+ Add Wave',waveEditorImport:'Import',waveEditorExport:'Export',waveEditorStart:'Start Custom Waves',waveEditorWave:'Wave {n}',waveEditorEnemy:'Enemy',waveEditorCount:'Count',waveEditorDel:'Delete',battleReportTitle:'Battle Report',battleReportTime:'Duration',battleReportDmg:'Total Damage',battleReportDPS:'Avg DPS',battleReportKills:'Kills',battleReportCombo:'Max Combo',battleReportWave:'Wave Reached',battleReportDamageTaken:'Damage Taken',battleReportDmgDist:'Damage Source Distribution',petEvolveBtn:'Pet Evolve',petEvolveTitle:'Pet Evolution',petEvolveLevel:'Level',petEvolveExp:'EXP',petEvolveBtnDo:'Evolve',petEvolveLocked:'Evolution conditions not met',petEvolveMax:'Max form reached',ghostReplay:'Ghost Racing',backToMenu:'Back to Menu',confirm:'OK',
+weatherEventTipTurn:'Wind shift!',weatherEventTipStorm:'Storm incoming!',statMaxCombo:'Max Combo',waveAnnounce:'Wave {n}',comboKillingSpree:'Killing Spree',comboRampage:'Rampage',comboGodlike:'Godlike',dailyLogin:'Daily Login',dailyLoginClaim:'Claim',dailyLoginClaimed:'Claimed',dailyLoginStreak:'{n}-Day Streak',dailyLoginDay1:'Day 1',dailyLoginDay2:'Day 2',dailyLoginDay3:'Day 3',dailyLoginDay4:'Day 4',dailyLoginDay5:'Day 5',dailyLoginDay6:'Day 6',dailyLoginDay7:'Day 7',replayBtn:'Death Replay',replayPlaying:'Replaying...',replaySkip:'Skip',sandbox:'Training Sandbox',sandboxStart:'Start Training',sandboxExit:'Exit Sandbox',sandboxEnemyType:'Enemy Type',sandboxSpawnCount:'Spawn Count',sandboxSpawnInterval:'Spawn Interval',sandboxEnemyHealth:'Enemy Health Multiplier',sandboxEnemySpeed:'Enemy Speed Multiplier',sandboxEnemyDamage:'Enemy Damage Multiplier',sandboxPlayerHealth:'Player Health',sandboxKnifeCount:'Knife Count',sandboxKnifeDamage:'Knife Damage',sandboxKnifeSpeed:'Knife Rotation Speed',sandboxInfiniteSpawn:'Infinite Spawn (continuous refresh)',sandboxEnemyTypeMulti:'Enemy Types (multi-select)',sandboxSelectAll:'Select All',sandboxClear:'Clear',challengeMode:'Challenge',challengeModeHint:'Choose constraints and earn extra rewards',challengeTitle:'Challenge Modes',challengeDesc:'Choose constraints and earn extra rewards',challengeStart:'Start Challenge',challengeNoKnife:'No-Knife Challenge',challengeNoKnifeDesc:'No knives, skills and dodging only',challengeOneHp:'One-Hit Wonder',challengeOneHpDesc:'HP locked at 1, no healing',challengeMutation:'Mutation Storm',challengeMutationDesc:'All enemies have mutations',challengeElement:'Element Trial',challengeElementDesc:'Only specific element counters work',challengeTimeLimit:'Time Sandbox',challengeTimeLimitDesc:'Sandbox mode + 60s countdown',customDifficulty:'Custom Difficulty',customDiffTitle:'Custom Difficulty',customDiffHealth:'Enemy Health Multi',customDiffSpeed:'Enemy Speed Multi',customDiffDamage:'Enemy Damage Multi',customDiffSpawn:'Spawn Rate (s/enemy)',customDiffWarning:'Custom difficulty not ranked',customDiffApply:'Apply & Start',cancel:'Cancel',statsDashboard:'Stats',statsDashboardTitle:'Statistics Dashboard',presetBtn:'Presets',presetTitle:'Equipment Presets',presetDesc:'Save 3 loadouts, switch instantly',presetSlot1:'Slot 1',presetSlot2:'Slot 2',presetSlot3:'Slot 3',presetSave:'Save Current',presetLoad:'Equip',presetEmpty:'Empty',prestigeBtn:'Prestige',prestigeTitle:'Quantum Prestige',prestigeLevel:'Prestige Level',prestigeBonus:'Permanent Bonus',prestigeReq:'Reach Wave {n} to prestige',prestigeConfirm:'Prestige now? Resets waves and resources, keeps bonuses',prestigeDoBtn:'Prestige',prestigeNoBtn:'Requirements not met',seasonBtn:'Season',newSeasonTitle:'Season System',seasonLevel:'Season Level',seasonExp:'Season XP',seasonTask:'Season Tasks',seasonReward:'Season Rewards',newSeasonDaysLeft:'Days Left',skinBtn:'Skins',skinTitle:'Skin System',skinKnife:'Knife Skins',skinAura:'Aura Skins',skinKill:'Kill Effects',skinLocked:'Unlock: {n}',skinEquip:'Equip',skinUnequip:'Unequip',waveEditorBtn:'Wave Editor',waveEditorTitle:'Wave Editor',waveEditorDesc:'Design custom wave sequences, share with friends',waveEditorAdd:'+ Add Wave',waveEditorImport:'Import',waveEditorExport:'Export',waveEditorStart:'Start Custom Waves',waveEditorWave:'Wave {n}',waveEditorEnemy:'Enemy',waveEditorCount:'Count',waveEditorDel:'Delete',battleReportTitle:'Battle Report',battleReportTime:'Duration',battleReportDmg:'Total Damage',battleReportDPS:'Avg DPS',battleReportKills:'Kills',battleReportCombo:'Max Combo',battleReportWave:'Wave Reached',battleReportDamageTaken:'Damage Taken',battleReportDmgDist:'Damage Source Distribution',petEvolveBtn:'Pet Evolve',petEvolveTitle:'Pet Evolution',petEvolveLevel:'Level',petEvolveExp:'EXP',petEvolveBtnDo:'Evolve',petEvolveLocked:'Evolution conditions not met',petEvolveMax:'Max form reached',ghostReplay:'Ghost Racing',backToMenu:'Back to Menu',backToBase:'Back to Base',confirm:'OK',
             }
         };
 
@@ -6998,6 +6998,94 @@ weatherEventTipTurn:'Wind shift!',weatherEventTipStorm:'Storm incoming!',statMax
                         stat: lang === 'zh' ? `基因点 ${genePoints} | 记录 ${lbEntries}` : `Gene ${genePoints} | Records ${lbEntries}`,
                         color: '#aa66ff',
                         borderColor: 'rgba(170,102,255,0.5)'
+                    },
+                    {
+                        id: 'customDiff',
+                        icon: '⚙️',
+                        nameZh: '自定义难度',
+                        nameEn: 'Custom Difficulty',
+                        descZh: '自由调节敌人属性',
+                        descEn: 'Customize enemy attributes',
+                        stat: lang === 'zh' ? '自由配置' : 'Free config',
+                        color: '#64ff64',
+                        borderColor: 'rgba(100,255,100,0.5)'
+                    },
+                    {
+                        id: 'statsDashboard',
+                        icon: '📊',
+                        nameZh: '统计仪表盘',
+                        nameEn: 'Statistics',
+                        descZh: '查看生涯数据统计',
+                        descEn: 'View career statistics',
+                        stat: lang === 'zh' ? `总击杀 ${(game.totalKillsAllTime || 0).toLocaleString()}` : `Kills ${(game.totalKillsAllTime || 0).toLocaleString()}`,
+                        color: '#64c8ff',
+                        borderColor: 'rgba(100,200,255,0.5)'
+                    },
+                    {
+                        id: 'preset',
+                        icon: '💾',
+                        nameZh: '配装预设',
+                        nameEn: 'Presets',
+                        descZh: '保存3套配装方案',
+                        descEn: 'Save 3 loadout presets',
+                        stat: lang === 'zh' ? '一键切换' : 'Quick switch',
+                        color: '#c896ff',
+                        borderColor: 'rgba(200,150,255,0.5)'
+                    },
+                    {
+                        id: 'prestige',
+                        icon: '🔄',
+                        nameZh: '转生',
+                        nameEn: 'Prestige',
+                        descZh: '重置获取永久加成',
+                        descEn: 'Reset for permanent bonuses',
+                        stat: lang === 'zh' ? `转生等级 ${game.prestigeLevel || 0}` : `Prestige Lv ${game.prestigeLevel || 0}`,
+                        color: '#ffd700',
+                        borderColor: 'rgba(255,215,0,0.5)'
+                    },
+                    {
+                        id: 'season',
+                        icon: '📅',
+                        nameZh: '赛季',
+                        nameEn: 'Season',
+                        descZh: '赛季任务与奖励',
+                        descEn: 'Season tasks & rewards',
+                        stat: lang === 'zh' ? `等级 ${(game.seasonData && game.seasonData.level) || 1}` : `Lv ${(game.seasonData && game.seasonData.level) || 1}`,
+                        color: '#00c864',
+                        borderColor: 'rgba(0,200,100,0.5)'
+                    },
+                    {
+                        id: 'skin',
+                        icon: '🎨',
+                        nameZh: '皮肤',
+                        nameEn: 'Skins',
+                        descZh: '装备飞刀/光环/击杀特效',
+                        descEn: 'Equip knife/aura/kill skins',
+                        stat: lang === 'zh' ? '个性化外观' : 'Customize look',
+                        color: '#ff96c8',
+                        borderColor: 'rgba(255,150,200,0.5)'
+                    },
+                    {
+                        id: 'waveEditor',
+                        icon: '🌊',
+                        nameZh: '波次编辑',
+                        nameEn: 'Wave Editor',
+                        descZh: '设计自定义波次序列',
+                        descEn: 'Design custom wave sequences',
+                        stat: lang === 'zh' ? `已创建 ${(game.customWaves || []).length} 波` : `${(game.customWaves || []).length} waves`,
+                        color: '#9664ff',
+                        borderColor: 'rgba(150,100,255,0.5)'
+                    },
+                    {
+                        id: 'petEvolve',
+                        icon: '🐾',
+                        nameZh: '宠物进化',
+                        nameEn: 'Pet Evolution',
+                        descZh: '升级和进化你的伴灵',
+                        descEn: 'Upgrade and evolve your pets',
+                        stat: lang === 'zh' ? `${(game.ownedPets || []).length} 只宠物` : `${(game.ownedPets || []).length} pets`,
+                        color: '#ffc800',
+                        borderColor: 'rgba(255,200,0,0.5)'
                     }
                 ];
 
@@ -7037,6 +7125,30 @@ weatherEventTipTurn:'Wind shift!',weatherEventTipStorm:'Storm incoming!',statMax
             } else if (funcId === 'geneLeaderboard') {
                 document.getElementById('talentTreeModal').style.display = 'flex';
                 renderTalentTree();
+            } else if (funcId === 'customDiff') {
+                var m = document.getElementById('customDiffModal');
+                if (m) m.style.display = 'flex';
+            } else if (funcId === 'statsDashboard') {
+                var m = document.getElementById('statsDashboardModal');
+                if (m) { m.style.display = 'flex'; renderStatsDashboard(); }
+            } else if (funcId === 'preset') {
+                var m = document.getElementById('presetModal');
+                if (m) { m.style.display = 'flex'; renderPresetSlots(); }
+            } else if (funcId === 'prestige') {
+                var m = document.getElementById('prestigeModal');
+                if (m) { m.style.display = 'flex'; renderPrestige(); }
+            } else if (funcId === 'season') {
+                var m = document.getElementById('seasonModal');
+                if (m) { m.style.display = 'flex'; renderSeasonContentForModal(); }
+            } else if (funcId === 'skin') {
+                var m = document.getElementById('skinModal');
+                if (m) { m.style.display = 'flex'; renderSkinGrid('knife'); }
+            } else if (funcId === 'waveEditor') {
+                var m = document.getElementById('waveEditorModal');
+                if (m) { m.style.display = 'flex'; renderWaveEditor(); }
+            } else if (funcId === 'petEvolve') {
+                var m = document.getElementById('petEvolveModal');
+                if (m) { m.style.display = 'flex'; renderPetEvolve(); }
             }
             if (typeof onboardingNotify === 'function') onboardingNotify();
         }
@@ -7044,6 +7156,13 @@ weatherEventTipTurn:'Wind shift!',weatherEventTipStorm:'Storm incoming!',statMax
         function returnToBase(modalId) {
             const modal = document.getElementById(modalId);
             if (modal) modal.style.display = 'none';
+            document.getElementById('baseMenu').style.display = 'flex';
+            renderBaseScreen();
+            if (typeof onboardingNotify === 'function') onboardingNotify();
+        }
+
+        function showBaseMenu() {
+            hideAllModals();
             document.getElementById('baseMenu').style.display = 'flex';
             renderBaseScreen();
             if (typeof onboardingNotify === 'function') onboardingNotify();
@@ -20509,10 +20628,10 @@ ${t('customTaskCooldownFormat').replace('{hours}', hours).replace('{minutes}', m
         (function setupNewFeatureListeners() {
             function safeGet(id) { return document.getElementById(id); }
 
-            // 挑战模式
-            var challengeBtn = safeGet('challengeBtn');
-            if (challengeBtn) challengeBtn.addEventListener('click', function() {
-                hideAllModals();
+            // 挑战模式 - 从模式选择界面进入
+            var modeSelectChallengeBtn = safeGet('modeSelectChallengeBtn');
+            if (modeSelectChallengeBtn) modeSelectChallengeBtn.addEventListener('click', function() {
+                hideModeSelectMenu();
                 renderChallengeGrid();
                 var m = safeGet('challengeModal');
                 if (m) m.style.display = 'flex';
@@ -20526,7 +20645,7 @@ ${t('customTaskCooldownFormat').replace('{hours}', hours).replace('{minutes}', m
                 startChallenge(_selectedChallengeType);
             });
             var challengeCloseBtn = safeGet('challengeCloseBtn');
-            if (challengeCloseBtn) challengeCloseBtn.addEventListener('click', function() { hideAllModals(); showMainMenu(); });
+            if (challengeCloseBtn) challengeCloseBtn.addEventListener('click', function() { hideAllModals(); showModeSelectMenu(); });
 
             // 自定义难度
             var customDiffBtn = safeGet('customDiffBtn');
@@ -20539,7 +20658,7 @@ ${t('customTaskCooldownFormat').replace('{hours}', hours).replace('{minutes}', m
             var customDiffApplyBtn = safeGet('customDiffApplyBtn');
             if (customDiffApplyBtn) customDiffApplyBtn.addEventListener('click', startCustomDifficulty);
             var customDiffCloseBtn = safeGet('customDiffCloseBtn');
-            if (customDiffCloseBtn) customDiffCloseBtn.addEventListener('click', function() { hideAllModals(); showMainMenu(); });
+            if (customDiffCloseBtn) customDiffCloseBtn.addEventListener('click', function() { hideAllModals(); showBaseMenu(); });
 
             // 统计仪表盘
             var statsBtn = safeGet('statsBtn');
@@ -20550,7 +20669,7 @@ ${t('customTaskCooldownFormat').replace('{hours}', hours).replace('{minutes}', m
                 if (m) m.style.display = 'flex';
             });
             var statsDashboardCloseBtn = safeGet('statsDashboardCloseBtn');
-            if (statsDashboardCloseBtn) statsDashboardCloseBtn.addEventListener('click', function() { hideAllModals(); showMainMenu(); });
+            if (statsDashboardCloseBtn) statsDashboardCloseBtn.addEventListener('click', function() { hideAllModals(); showBaseMenu(); });
 
             // 装备预设
             var presetBtn = safeGet('presetBtn');
@@ -20561,7 +20680,7 @@ ${t('customTaskCooldownFormat').replace('{hours}', hours).replace('{minutes}', m
                 if (m) m.style.display = 'flex';
             });
             var presetCloseBtn = safeGet('presetCloseBtn');
-            if (presetCloseBtn) presetCloseBtn.addEventListener('click', function() { hideAllModals(); showMainMenu(); });
+            if (presetCloseBtn) presetCloseBtn.addEventListener('click', function() { hideAllModals(); showBaseMenu(); });
 
             // 转生
             var prestigeBtn = safeGet('prestigeBtn');
@@ -20572,7 +20691,7 @@ ${t('customTaskCooldownFormat').replace('{hours}', hours).replace('{minutes}', m
                 if (m) m.style.display = 'flex';
             });
             var prestigeCloseBtn = safeGet('prestigeCloseBtn');
-            if (prestigeCloseBtn) prestigeCloseBtn.addEventListener('click', function() { hideAllModals(); showMainMenu(); });
+            if (prestigeCloseBtn) prestigeCloseBtn.addEventListener('click', function() { hideAllModals(); showBaseMenu(); });
 
             // 赛季
             var seasonBtn = safeGet('seasonBtn');
@@ -20583,7 +20702,7 @@ ${t('customTaskCooldownFormat').replace('{hours}', hours).replace('{minutes}', m
                 if (m) m.style.display = 'flex';
             });
             var seasonCloseBtn = safeGet('seasonCloseBtn');
-            if (seasonCloseBtn) seasonCloseBtn.addEventListener('click', function() { hideAllModals(); showMainMenu(); });
+            if (seasonCloseBtn) seasonCloseBtn.addEventListener('click', function() { hideAllModals(); showBaseMenu(); });
 
             // 皮肤
             var skinBtn = safeGet('skinBtn');
@@ -20596,7 +20715,7 @@ ${t('customTaskCooldownFormat').replace('{hours}', hours).replace('{minutes}', m
                 if (m) m.style.display = 'flex';
             });
             var skinCloseBtn = safeGet('skinCloseBtn');
-            if (skinCloseBtn) skinCloseBtn.addEventListener('click', function() { hideAllModals(); showMainMenu(); });
+            if (skinCloseBtn) skinCloseBtn.addEventListener('click', function() { hideAllModals(); showBaseMenu(); });
             // 皮肤 Tab 切换
             document.querySelectorAll('[data-skin-tab]').forEach(function(tab) {
                 tab.addEventListener('click', function() {
@@ -20645,7 +20764,7 @@ ${t('customTaskCooldownFormat').replace('{hours}', hours).replace('{minutes}', m
             var waveEditorStartBtn = safeGet('waveEditorStartBtn');
             if (waveEditorStartBtn) waveEditorStartBtn.addEventListener('click', function() { if (typeof startCustomWaves === 'function') startCustomWaves(); });
             var waveEditorCloseBtn = safeGet('waveEditorCloseBtn');
-            if (waveEditorCloseBtn) waveEditorCloseBtn.addEventListener('click', function() { hideAllModals(); showMainMenu(); });
+            if (waveEditorCloseBtn) waveEditorCloseBtn.addEventListener('click', function() { hideAllModals(); showBaseMenu(); });
 
             // 宠物进化
             var petEvolveBtn = safeGet('petEvolveBtn');
@@ -20656,7 +20775,7 @@ ${t('customTaskCooldownFormat').replace('{hours}', hours).replace('{minutes}', m
                 if (m) m.style.display = 'flex';
             });
             var petEvolveCloseBtn = safeGet('petEvolveCloseBtn');
-            if (petEvolveCloseBtn) petEvolveCloseBtn.addEventListener('click', function() { hideAllModals(); showMainMenu(); });
+            if (petEvolveCloseBtn) petEvolveCloseBtn.addEventListener('click', function() { hideAllModals(); showBaseMenu(); });
 
             // 战斗报告关闭
             var battleReportCloseBtn = safeGet('battleReportCloseBtn');
